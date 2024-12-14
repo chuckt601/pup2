@@ -1,0 +1,11 @@
+# LegMoveActions.action
+
+# Goal
+float32 target
+int32 leg
+---
+# Result
+bool success
+---
+# Feedback
+int32 progress
