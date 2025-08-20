@@ -1,0 +1,44 @@
+[0.161s] Invoking command in '/home/ubuntu/ros_ws/src/build/champ_teleop': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake /home/ubuntu/ros_ws/src/champ_teleop -DCMAKE_INSTALL_PREFIX=/home/ubuntu/ros_ws/src/install/champ_teleop
+[0.845s] -- The C compiler identification is GNU 11.4.0
+[1.931s] -- The CXX compiler identification is GNU 11.4.0
+[2.105s] -- Detecting C compiler ABI info
+[3.475s] -- Detecting C compiler ABI info - done
+[3.558s] -- Check for working C compiler: /usr/bin/cc - skipped
+[3.561s] -- Detecting C compile features
+[3.565s] -- Detecting C compile features - done
+[3.601s] -- Detecting CXX compiler ABI info
+[5.426s] -- Detecting CXX compiler ABI info - done
+[5.619s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[5.620s] -- Detecting CXX compile features
+[5.624s] -- Detecting CXX compile features - done
+[6.063s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[11.628s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[15.936s] -- Configuring done
+[16.043s] -- Generating done
+[16.100s] -- Build files have been written to: /home/ubuntu/ros_ws/src/build/champ_teleop
+[16.151s] Invoked command in '/home/ubuntu/ros_ws/src/build/champ_teleop' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake /home/ubuntu/ros_ws/src/champ_teleop -DCMAKE_INSTALL_PREFIX=/home/ubuntu/ros_ws/src/install/champ_teleop
+[16.159s] Invoking command in '/home/ubuntu/ros_ws/src/build/champ_teleop': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/ros_ws/src/build/champ_teleop -- -j4 -l4
+[16.710s] Invoked command in '/home/ubuntu/ros_ws/src/build/champ_teleop' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/ros_ws/src/build/champ_teleop -- -j4 -l4
+[16.712s] Invoking command in '/home/ubuntu/ros_ws/src/build/champ_teleop': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/ros_ws/src/build/champ_teleop
+[16.854s] -- Install configuration: ""
+[16.859s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/launch
+[16.873s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/launch/.teleop.launch.py.swp
+[16.888s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/launch/teleop.launch.py
+[16.899s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/launch/champ_teleop_only.launch.py
+[16.914s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/lib/champ_teleop/champ_teleop.py
+[16.927s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/ament_index/resource_index/package_run_dependencies/champ_teleop
+[16.938s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/ament_index/resource_index/parent_prefix_path/champ_teleop
+[16.943s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/environment/ament_prefix_path.sh
+[16.953s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/environment/ament_prefix_path.dsv
+[16.963s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/environment/path.sh
+[16.975s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/environment/path.dsv
+[16.981s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/local_setup.bash
+[16.988s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/local_setup.sh
+[16.994s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/local_setup.zsh
+[16.995s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/local_setup.dsv
+[16.997s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/package.dsv
+[17.012s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/ament_index/resource_index/packages/champ_teleop
+[17.016s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/cmake/champ_teleopConfig.cmake
+[17.024s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/cmake/champ_teleopConfig-version.cmake
+[17.026s] -- Installing: /home/ubuntu/ros_ws/src/install/champ_teleop/share/champ_teleop/package.xml
+[17.054s] Invoked command in '/home/ubuntu/ros_ws/src/build/champ_teleop' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/ros_ws/src/build/champ_teleop

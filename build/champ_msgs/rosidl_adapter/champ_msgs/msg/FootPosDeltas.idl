@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from champ_msgs/msg/FootPosDeltas.msg
+// generated code does not contain a copyright notice
+
+#include "champ_msgs/msg/Transformation.idl"
+
+module champ_msgs {
+  module msg {
+    typedef champ_msgs::msg::Transformation champ_msgs__msg__Transformation;
+    typedef champ_msgs__msg__Transformation champ_msgs__msg__Transformation__4[4];
+    @verbatim (language="comment", text=
+      "geometry_msgs/Transform foot_pos_deltas")
+    struct FootPosDeltas {
+      @verbatim (language="comment", text=
+        "Array of 4 Transformation objects")
+      champ_msgs__msg__Transformation__4 foot_pos_deltas;
+    };
+  };
+};

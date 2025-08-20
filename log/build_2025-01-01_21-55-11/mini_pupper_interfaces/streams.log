@@ -1,0 +1,111 @@
+[0.165s] Invoking command in '/home/ubuntu/ros_ws/src/build/mini_pupper_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake /home/ubuntu/ros_ws/src/mini_pupper_ros/mini_pupper_interfaces -DCMAKE_INSTALL_PREFIX=/home/ubuntu/ros_ws/src/install/mini_pupper_interfaces
+[0.695s] -- The C compiler identification is GNU 11.4.0
+[1.185s] -- The CXX compiler identification is GNU 11.4.0
+[1.255s] -- Detecting C compiler ABI info
+[2.131s] -- Detecting C compiler ABI info - done
+[2.226s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.229s] -- Detecting C compile features
+[2.232s] -- Detecting C compile features - done
+[2.250s] -- Detecting CXX compiler ABI info
+[3.302s] -- Detecting CXX compiler ABI info - done
+[3.374s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.381s] -- Detecting CXX compile features
+[3.383s] -- Detecting CXX compile features - done
+[3.527s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[5.390s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[7.220s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[8.253s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[8.411s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[8.617s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[8.916s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[9.474s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[10.049s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[13.124s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[20.383s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[23.754s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[24.224s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[24.449s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[24.873s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[24.881s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[24.881s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[24.882s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[25.391s] -- Found PythonExtra: .so  
+[26.827s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[27.747s] -- Added test 'lint_cmake' to check CMake code style
+[27.766s] -- Added test 'xmllint' to check XML markup files
+[27.812s] -- Configuring done
+[28.238s] -- Generating done
+[28.323s] -- Build files have been written to: /home/ubuntu/ros_ws/src/build/mini_pupper_interfaces
+[28.368s] Invoked command in '/home/ubuntu/ros_ws/src/build/mini_pupper_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake /home/ubuntu/ros_ws/src/mini_pupper_ros/mini_pupper_interfaces -DCMAKE_INSTALL_PREFIX=/home/ubuntu/ros_ws/src/install/mini_pupper_interfaces
+[28.371s] Invoking command in '/home/ubuntu/ros_ws/src/build/mini_pupper_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/ros_ws/install/nav2_simple_commander:/home/ubuntu/ros_ws/install/nav2_loopback_sim:/home/ubuntu/ros_ws/install/mini_pupper_music:/home/ubuntu/ros_ws/install/mini_pupper_dance:/home/ubuntu/ros_ws/install/mini_pupper_driver:/home/ubuntu/ros_ws/install/bno055:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/ros_ws/src/build/mini_pupper_interfaces -- -j4 -l4
+[29.015s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[29.102s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[29.366s] [  4%] Built target ament_cmake_python_copy_mini_pupper_interfaces
+[35.697s] running egg_info
+[35.721s] creating mini_pupper_interfaces.egg-info
+[35.735s] writing mini_pupper_interfaces.egg-info/PKG-INFO
+[35.747s] writing dependency_links to mini_pupper_interfaces.egg-info/dependency_links.txt
+[35.750s] writing top-level names to mini_pupper_interfaces.egg-info/top_level.txt
+[35.760s] writing manifest file 'mini_pupper_interfaces.egg-info/SOURCES.txt'
+[35.815s] reading manifest file 'mini_pupper_interfaces.egg-info/SOURCES.txt'
+[35.822s] writing manifest file 'mini_pupper_interfaces.egg-info/SOURCES.txt'
+[36.511s] [  4%] Built target ament_cmake_python_build_mini_pupper_interfaces_egg
+[39.567s] [  4%] Built target mini_pupper_interfaces__cpp
+[40.638s] [  6%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mini_pupper_interfaces/srv/detail/dance_command__functions.c.o[0m
+[41.514s] [  8%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mini_pupper_interfaces/srv/detail/play_music__functions.c.o[0m
+[42.903s] [ 10%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_generator_c.dir/rosidl_generator_c/mini_pupper_interfaces/srv/detail/stop_music__functions.c.o[0m
+[43.740s] [ 12%] [32m[1mLinking C shared library libmini_pupper_interfaces__rosidl_generator_c.so[0m
+[44.226s] [ 12%] Built target mini_pupper_interfaces__rosidl_generator_c
+[44.386s] [ 14%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[49.448s] [ 17%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mini_pupper_interfaces/srv/detail/dance_command__type_support.cpp.o[0m
+[52.438s] [ 19%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mini_pupper_interfaces/srv/detail/play_music__type_support.cpp.o[0m
+[57.321s] [ 21%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/mini_pupper_interfaces/srv/detail/stop_music__type_support.cpp.o[0m
+[61.497s] [ 23%] [32m[1mLinking CXX shared library libmini_pupper_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[62.332s] [ 23%] Built target mini_pupper_interfaces__rosidl_typesupport_introspection_cpp
+[62.428s] [ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[68.822s] [ 27%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mini_pupper_interfaces/srv/detail/dance_command__type_support_c.cpp.o[0m
+[72.974s] [ 29%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mini_pupper_interfaces/srv/detail/play_music__type_support_c.cpp.o[0m
+[78.158s] [ 31%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/mini_pupper_interfaces/srv/detail/stop_music__type_support_c.cpp.o[0m
+[83.290s] [ 34%] [32m[1mLinking CXX shared library libmini_pupper_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[83.739s] [ 34%] Built target mini_pupper_interfaces__rosidl_typesupport_fastrtps_c
+[83.875s] [ 36%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[89.370s] [ 38%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mini_pupper_interfaces/srv/detail/dance_command__type_support.c.o[0m
+[89.816s] [ 40%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mini_pupper_interfaces/srv/detail/play_music__type_support.c.o[0m
+[90.563s] [ 42%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/mini_pupper_interfaces/srv/detail/stop_music__type_support.c.o[0m
+[91.315s] [ 44%] [32m[1mLinking C shared library libmini_pupper_interfaces__rosidl_typesupport_introspection_c.so[0m
+[91.675s] [ 44%] Built target mini_pupper_interfaces__rosidl_typesupport_introspection_c
+[91.837s] [ 46%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[96.252s] [ 48%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/mini_pupper_interfaces/srv/dance_command__type_support.cpp.o[0m
+[96.729s] [ 51%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/mini_pupper_interfaces/srv/play_music__type_support.cpp.o[0m
+[97.344s] [ 53%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/mini_pupper_interfaces/srv/stop_music__type_support.cpp.o[0m
+[97.751s] [ 55%] [32m[1mLinking CXX shared library libmini_pupper_interfaces__rosidl_typesupport_c.so[0m
+[98.264s] [ 55%] Built target mini_pupper_interfaces__rosidl_typesupport_c
+[98.343s] [ 57%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[102.683s] [ 59%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mini_pupper_interfaces/srv/detail/dds_fastrtps/dance_command__type_support.cpp.o[0m
+[108.303s] [ 61%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mini_pupper_interfaces/srv/detail/dds_fastrtps/stop_music__type_support.cpp.o[0m
+[111.680s] [ 63%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/mini_pupper_interfaces/srv/detail/dds_fastrtps/play_music__type_support.cpp.o[0m
+[115.856s] [ 65%] [32m[1mLinking CXX shared library libmini_pupper_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[116.471s] [ 65%] Built target mini_pupper_interfaces__rosidl_typesupport_fastrtps_cpp
+[116.627s] [ 68%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[120.062s] [ 70%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mini_pupper_interfaces/srv/dance_command__type_support.cpp.o[0m
+[122.390s] [ 72%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mini_pupper_interfaces/srv/stop_music__type_support.cpp.o[0m
+[124.974s] [ 74%] [32mBuilding CXX object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/mini_pupper_interfaces/srv/play_music__type_support.cpp.o[0m
+[127.296s] [ 76%] [32m[1mLinking CXX shared library libmini_pupper_interfaces__rosidl_typesupport_cpp.so[0m
+[127.678s] [ 76%] Built target mini_pupper_interfaces__rosidl_typesupport_cpp
+[127.828s] [ 76%] Built target mini_pupper_interfaces
+[127.991s] [ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[137.031s] [ 78%] Built target mini_pupper_interfaces__py
+[137.289s] [ 80%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mini_pupper_interfaces/srv/_dance_command_s.c.o[0m
+[138.986s] [ 82%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mini_pupper_interfaces/srv/_stop_music_s.c.o[0m
+[139.998s] [ 85%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_generator_py.dir/rosidl_generator_py/mini_pupper_interfaces/srv/_play_music_s.c.o[0m
+[140.981s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/mini_pupper_interfaces/libmini_pupper_interfaces__rosidl_generator_py.so[0m
+[141.330s] [ 87%] Built target mini_pupper_interfaces__rosidl_generator_py
+[141.546s] [ 89%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/mini_pupper_interfaces/_mini_pupper_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[142.607s] [ 91%] [32m[1mLinking C shared library rosidl_generator_py/mini_pupper_interfaces/mini_pupper_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[142.935s] [ 91%] Built target mini_pupper_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[143.108s] [ 93%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/mini_pupper_interfaces/_mini_pupper_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[144.511s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/mini_pupper_interfaces/mini_pupper_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[145.061s] [ 95%] Built target mini_pupper_interfaces__rosidl_typesupport_c__pyext
+[145.356s] [ 97%] [32mBuilding C object CMakeFiles/mini_pupper_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/mini_pupper_interfaces/_mini_pupper_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[147.088s] [100%] [32m[1mLinking C shared library rosidl_generator_py/mini_pupper_interfaces/mini_pupper_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[147.640s] [100%] Built target mini_pupper_interfaces__rosidl_typesupport_introspection_c__pyext

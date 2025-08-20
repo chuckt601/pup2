@@ -67,6 +67,7 @@ QuadrupedController::QuadrupedController():
     this->get_parameter("joint_controller_topic",      joint_control_topic);
     this->get_parameter("loop_rate",                   loop_rate);
     this->get_parameter("urdf",                        urdf);
+    this->get_parameter_or("gait_type",                gait_type,2);
     
     cmd_vel_subscription_ = this->create_subscription<geometry_msgs::msg::Twist>(
         "cmd_vel/smooth", 10, std::bind(&QuadrupedController::cmdVelCallback_, this,  std::placeholders::_1));
@@ -81,7 +82,7 @@ QuadrupedController::QuadrupedController():
     foot_pos_deltas_subscription_ = this->create_subscription<champ_msgs::msg::FootPosDeltas>(
         "foot_pos_deltas", 1,  std::bind(&QuadrupedController::footPosDeltasCallback_, this,  std::placeholders::_1));
     //joint_commands_publisher_ = this->create_publisher<geometry_msgs::msg::Transform[4]>(foot_pos_delta, 10);
-    //foot_pos_deltas_publisher_ = this->create_publisher<champ_msgs::msg::FootPosDeltas>("foot_position_deltas", 10);
+    foot_pos_deltas_publisher_ = this->create_publisher<champ_msgs::msg::FootPosDeltas>("foot_position_deltas", 10);
     
     if(publish_joint_control_)
     {
@@ -97,6 +98,9 @@ QuadrupedController::QuadrupedController():
     {
         foot_contacts_publisher_   = this->create_publisher<champ_msgs::msg::ContactsStamped>("foot_contacts", 10);
     }
+
+    callback_handle_ = this->add_on_set_parameters_callback(
+      std::bind(&QuadrupedController::parameter_callback, this, std::placeholders::_1));
 
     gait_config_.knee_orientation = knee_orientation.c_str();
     //geometry::Transformation foot_pos_deltas[4];
@@ -146,8 +150,9 @@ void QuadrupedController::controlLoop_()
 
     //leg_controller_.individualFootControl(target_foot_positions,legToOffset,leg_offset); //clt 20240816 new feature for static arm debug
     addFootPosDeltas(target_foot_positions, foot_pos_deltas);
-
-    leg_controller_.velocityCommand(target_foot_positions, req_vel_, rosTimeToChampTime(clock_.now()));
+    if (gait_type==2){
+        leg_controller_.velocityCommand(target_foot_positions, req_vel_, rosTimeToChampTime(clock_.now()));
+        }
     kinematics_.inverse(target_joint_positions, target_foot_positions);
 
     publishFootContacts_(foot_contacts);
@@ -177,7 +182,7 @@ void QuadrupedController::CGOffsetCallback_(const std_msgs::msg::Float32MultiArr
     CG_offset_target_x = static_cast<double>(msg.data[0]);
     CG_offset_target_y = static_cast<double>(msg.data[1]);
     RCLCPP_INFO(this->get_logger(), "leg offset set = %f",CG_offset_target_x);
-    //foot_pos_deltas_publisher_->publish(foot_pos_deltas);
+    foot_pos_deltas_publisher_->publish(foot_pos_deltas);
     
     
 }
@@ -208,11 +213,11 @@ void QuadrupedController::cmdPoseCallback_(const geometry_msgs::msg::Pose::Share
     req_pose_.orientation.pitch = pitch;
     req_pose_.orientation.yaw = yaw;
 
-    CG_shift_x += .1*(CG_offset_target_x-CG_shift_x);
-    CG_shift_y += .1*(CG_offset_target_y-CG_shift_y);
+    //CG_shift_x += .1*(CG_offset_target_x-CG_shift_x);
+    //CG_shift_y += .1*(CG_offset_target_y-CG_shift_y);
 
-    req_pose_.position.x = CG_shift_x; //CG_shift_x;
-    req_pose_.position.y = CG_shift_y; //CG_shift_y;
+    req_pose_.position.x = msg->position.x;//clt 20250816 CG_shift_x; //CG_shift_x;
+    req_pose_.position.y = msg->position.y;//clt 20250816 CG_shift_y; //CG_shift_y;
     req_pose_.position.z = msg->position.z +  gait_config_.nominal_height;
 }
 
@@ -292,3 +297,17 @@ void QuadrupedController::addFootPosDeltas (geometry::Transformation (&target_fo
 
 }
 
+rcl_interfaces::msg::SetParametersResult QuadrupedController::parameter_callback(
+      const std::vector<rclcpp::Parameter> &params)
+  {
+    rcl_interfaces::msg::SetParametersResult result;
+    result.successful = true;
+    RCLCPP_INFO(this->get_logger(),"parameter callback triggered");
+    for (const auto &param : params) {
+      if (param.get_name() == "gait_type") {
+        gait_type = param.as_int();
+        RCLCPP_INFO(this->get_logger(),"gait_type updated to: %i", gait_type);
+        }
+    }
+    return result;
+  }

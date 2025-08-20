@@ -164,5 +164,5 @@ def generate_launch_description():
         servo_interface_launch,
         ldlidar_launch,
         bno055_launch,
-        #champ_teleop_launch
+        champ_teleop_launch
     ])

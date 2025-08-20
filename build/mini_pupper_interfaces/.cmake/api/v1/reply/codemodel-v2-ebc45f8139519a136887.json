@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-92796ca2a595c8681ea0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "mini_pupper_interfaces__py",
+					"jsonFile" : "directory-mini_pupper_interfaces__py-2b570d0ac178bd145b1f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/ubuntu/ros_ws/src/build/mini_pupper_interfaces/mini_pupper_interfaces__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "mini_pupper_interfaces",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_mini_pupper_interfaces_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_mini_pupper_interfaces_egg-988f9c8aa1eff8d95258.json",
+					"name" : "ament_cmake_python_build_mini_pupper_interfaces_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_mini_pupper_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_mini_pupper_interfaces-f35374fdf9e543993c19.json",
+					"name" : "ament_cmake_python_copy_mini_pupper_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces-e9dea58942e6d8d08ef1.json",
+					"name" : "mini_pupper_interfaces",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__cpp-de6f2e4282fa60805eff.json",
+					"name" : "mini_pupper_interfaces__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "mini_pupper_interfaces__py::@ec057e45b433a51afb28",
+					"jsonFile" : "target-mini_pupper_interfaces__py-945db96b2e1a288b7e09.json",
+					"name" : "mini_pupper_interfaces__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_generator_c-ea4bf3c1e14f5aeb9ab8.json",
+					"name" : "mini_pupper_interfaces__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_generator_py-060fde4fe4bfed1ab109.json",
+					"name" : "mini_pupper_interfaces__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_c-12a1c8dc03c01de36e8b.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_c__pyext-012616b56774acf1412b.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_cpp-138de5ecaa48d31c551d.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_fastrtps_c-4c816f45d9558b3d2aa4.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_fastrtps_c__pyext-39627140bb596d654268.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_fastrtps_cpp-7e3b11a4600d6f95b51e.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_introspection_c-0fc82afc3f162cae91ea.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_introspection_c__pyext-b04171af673a9d416a57.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces__rosidl_typesupport_introspection_cpp-9b38404d96a3f49ed8ec.json",
+					"name" : "mini_pupper_interfaces__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "mini_pupper_interfaces_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-mini_pupper_interfaces_uninstall-d8b00523503bc027c0af.json",
+					"name" : "mini_pupper_interfaces_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-e9b87be5b2acced2f282.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ubuntu/ros_ws/src/build/mini_pupper_interfaces",
+		"source" : "/home/ubuntu/ros_ws/src/mini_pupper_ros/mini_pupper_interfaces"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -54,6 +54,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <sensor_msgs/msg/joint_state.hpp>
 #include <trajectory_msgs/msg/joint_trajectory.hpp>
 #include <trajectory_msgs/msg/joint_trajectory_point.hpp>
+#include "rcl_interfaces/msg/set_parameters_result.hpp"
 
 class QuadrupedController: public rclcpp::Node
 {
@@ -67,7 +68,10 @@ class QuadrupedController: public rclcpp::Node
     rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr joint_states_publisher_;
     rclcpp::Publisher<champ_msgs::msg::ContactsStamped>::SharedPtr foot_contacts_publisher_;
     // @brief 
-    //rclcpp::Publisher<champ_msgs::msg::FootPosDeltas>::SharedPtr foot_pos_deltas_publisher_;
+    rclcpp::Publisher<champ_msgs::msg::FootPosDeltas>::SharedPtr foot_pos_deltas_publisher_;
+
+    rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr callback_handle_;
+
 
     rclcpp::TimerBase::SharedPtr loop_timer_;
     rclcpp::Clock clock_;
@@ -90,9 +94,8 @@ class QuadrupedController: public rclcpp::Node
     double  CG_offset_target_y;
     double  CG_shift_x;
     double  CG_shift_y;
-
-
-
+    public:
+      int     gait_type;
 
     champ_msgs::msg::FootPosDeltas foot_pos_deltas;
 
@@ -112,6 +115,9 @@ class QuadrupedController: public rclcpp::Node
     void CGOffsetCallback_(const std_msgs::msg::Float32MultiArray msg);
     void footPosDeltasCallback_(const champ_msgs::msg::FootPosDeltas msg);
     void addFootPosDeltas (geometry::Transformation  (&target_foot_pos)[4], champ_msgs::msg::FootPosDeltas foot_pos_deltas);
+   
+    rcl_interfaces::msg::SetParametersResult parameter_callback(
+      const std::vector<rclcpp::Parameter> &params);
     public:
         QuadrupedController();
 }; 

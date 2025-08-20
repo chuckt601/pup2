@@ -1,0 +1,11 @@
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/Velocities.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/PID.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/Imu.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/Point.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/PointArray.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/Joints.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/Contacts.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/ContactsStamped.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/Pose.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/Transformation.idl
+/home/ubuntu/ros_ws/src/build/champ_msgs/rosidl_adapter/champ_msgs:msg/FootPosDeltas.idl

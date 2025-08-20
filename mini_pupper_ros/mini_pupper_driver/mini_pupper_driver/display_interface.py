@@ -17,7 +17,8 @@
 # limitations under the License.
 # @Author  : Yunlong Feng
 
-import PIL
+#import PIL
+from PIL import Image as PILImage
 import rclpy
 from rclpy.node import Node
 import cv2
@@ -35,11 +36,11 @@ class DisplayNode(Node):
         self.get_logger().info("Creating LCD hardware interface")
         self.disp = ST7789()
         self.disp.begin()
-        self.disp.clear()
+        #self.disp.clear()
 
     def callback(self, msg):
         cv_img = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
-        image = PIL.Image.fromarray(cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB))
+        image = PILImage.fromarray(cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB))
         resized = image.resize((320, 240))
         self.disp.display(resized)
 

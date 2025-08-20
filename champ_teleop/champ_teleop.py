@@ -19,6 +19,9 @@ from sensor_msgs.msg import Joy
 from std_msgs.msg import Float32
 #from example_interfaces.msg import Float32MultiArray
 from std_msgs.msg import Float32MultiArray
+from rcl_interfaces.msg import SetParametersResult
+from rcl_interfaces.srv import SetParameters
+from rclpy.parameter import Parameter
 
 def quaternion_from_euler(roll, pitch, yaw):
     """
@@ -65,6 +68,9 @@ def quaternion_from_euler(roll, pitch, yaw):
 class Teleop(Node):
     def __init__(self):
         super().__init__('champ_teleop')
+
+        
+        
        
         self.velocity_publisher = self.create_publisher(Twist, 'cmd_vel', 1)
         self.pose_lite_publisher = self.create_publisher(PoseLite, 'body_pose/raw', 1)
@@ -76,6 +82,7 @@ class Teleop(Node):
         self.joy_subscriber = self.create_subscription(Joy, 'joy', self.joy_callback, 1)
         self.roll_subscriber = self.create_subscription(Float32, 'roll', self.roll_callback, 1)
         self.pitch_subscriber = self.create_subscription(Float32, 'pitch', self.pitch_callback, 1)
+        
         self.imu_roll=0.0
         self.imu_pitch=0.0
         self.pose_roll=0.0
@@ -98,9 +105,13 @@ class Teleop(Node):
         self.declare_parameter("speed", 0.5)
         self.declare_parameter("turn", 1.0)
         self.declare_parameter("joy", True)
+        self.declare_parameter("imu_balance_enabled", True)
         
         self.swing_height = self.get_parameter("gait/swing_height").value
         self.nominal_height = self.get_parameter("gait/nominal_height").value
+
+        self.imu_balance_enabled = self.get_parameter("imu_balance_enabled").get_parameter_value().bool_value
+        self.add_on_set_parameters_callback(self.parameter_callback)
 
         self.speed = self.get_parameter("speed").value
         self.turn = self.get_parameter("turn").value
@@ -157,6 +168,14 @@ class Teleop(Node):
         self.get_logger().info("use_joy is  %s" % self.use_joy)
         if self.use_joy==False:  
             self.poll_keys()
+
+        # Create client to Node B's set_parameters service
+        self.cli = self.create_client(SetParameters, '/quadruped_controller_node/set_parameters')
+
+        while not self.cli.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('Waiting for /node_b/set_parameters service...')
+
+           
             
     def roll_callback(self, data):
         self.imu_roll = data.data
@@ -172,7 +191,7 @@ class Teleop(Node):
         if self.imu_pitch<-45: self.imu_pitch=-45.0
         self.body_pose_lite.roll = self.pose_roll+.12*(self.roll_target- (self.imu_roll*3.14/180.0))
         #body_pose_lite.pitch = data.axes[4] * 0.174533 + self.imu_pitch*3.14/180
-        self.body_pose_lite.pitch = self.pose_pitch+.12*(-self.pitch_target + (self.imu_pitch+4)*3.14/180)
+        self.body_pose_lite.pitch = self.pose_pitch+.15*(-self.pitch_target + (self.imu_pitch)*3.14/180)
         self.pose_roll=self.body_pose_lite.roll
         self.pose_pitch=self.body_pose_lite.pitch
         self.body_pose_lite.yaw = self.yaw_target * 0.436332
@@ -184,8 +203,8 @@ class Teleop(Node):
 
         self.pose_lite_publisher.publish(self.body_pose_lite)
 
-        #self.cg_shift_x=self.cg_shift_x+.1*(self.cg_shift_target_x-self.cg_shift_x)
-        #self.cg_shift_y=self.cg_shift_y+.1*(self.cg_shift_target_y-self.cg_shift_y)
+        self.cg_shift_x=self.cg_shift_x+.1*(self.cg_shift_target_x-self.cg_shift_x)
+        self.cg_shift_y=self.cg_shift_y+.1*(self.cg_shift_target_y-self.cg_shift_y)
 
         body_pose = Pose()
         body_pose.position.z = self.body_pose_lite.z
@@ -196,8 +215,10 @@ class Teleop(Node):
         body_pose.orientation.y = quaternion[2]
         body_pose.orientation.z = quaternion[3]
         body_pose.orientation.w = quaternion[0]
+        #self.get_logger().info(f"imu_balance_enabled is {self.imu_balance_enabled}")
 
-        self.pose_publisher.publish(body_pose)  
+        if self.imu_balance_enabled:            
+            self.pose_publisher.publish(body_pose)  
 
     def joy_callback(self, data):
         twist = Twist()
@@ -206,7 +227,7 @@ class Teleop(Node):
         twist.linear.z = 0.0
         twist.angular.x = 0.0
         twist.angular.y = 0.0
-        twist.angular.z = (not data.buttons[4]) * data.axes[0] * self.turn
+        twist.angular.z = (not data.buttons[4]) * data.axes[0] * self.turn    
         self.velocity_publisher.publish(twist) 
 
         self.roll_target=(not data.buttons[5]) *-data.axes[3] * 0.349066 
@@ -224,12 +245,16 @@ class Teleop(Node):
 
         if data.buttons[0] or data.buttons[1] or data.buttons[2] or data.buttons[3]:
            if data.buttons[1]:
+               self.set_param("gait_type", 1)
                offset_arm=1.0
            elif data.buttons[0]:
+               self.set_param("gait_type", 0) 
                offset_arm=3.0
            elif data.buttons[2]:
+               self.set_param("gait_type", 2)
                offset_arm=2.0
            elif data.buttons[3]:
+               self.set_param("gait_type", 3) 
                offset_arm=0.0
            if  data.buttons[4]:            
                self.offset_ammount+=0.001
@@ -240,7 +265,15 @@ class Teleop(Node):
                self.offset_ammount=0.0            
            msg = Float32MultiArray()
            msg.data = [offset_arm,self.offset_ammount]       
-           self.arm_offset_publisher.publish(msg)     
+           self.arm_offset_publisher.publish(msg)    
+
+    def parameter_callback(self,params):
+        for param in params:
+            if param.name == "imu_balance_enabled":
+                self.get_logger().info(f"imu_balance_enabled updated to: {param.value}")
+                self.imu_balance_enabled = param.value
+        return SetParametersResult(successful=True)
+
 
 
     def poll_keys(self):
@@ -327,6 +360,31 @@ class Teleop(Node):
 
     def map(self, x, in_min, in_max, out_min, out_max):
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+
+    def set_param(self, name: str, value: int):
+    # Create parameter message
+        param = Parameter(name, Parameter.Type.INTEGER, value)
+
+    # Build request
+        request = SetParameters.Request()
+        request.parameters = [param.to_parameter_msg()]
+
+    # Call service
+        future = self.cli.call_async(request)
+        future.add_done_callback(self.param_result_callback)
+
+    def param_result_callback(self, future):
+        try:
+            response = future.result()
+            if all(r.successful for r in response.results):
+             self.get_logger().info("Parameter updated successfully.")
+            else:
+             self.get_logger().warn("Parameter update failed.")
+        except Exception as e:
+         self.get_logger().error(f"Service call failed: {e}")
+
+
+
 
 def main(args=None):
     rclpy.init(args=args)

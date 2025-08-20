@@ -29,7 +29,8 @@ setup(
             'display_interface = mini_pupper_driver.display_interface:main',
             'imu_interface = mini_pupper_driver.imu_interface:main',
             'servo_status = mini_pupper_driver.servo_status:main',
-            'battery_status = mini_pupper_driver.battery_status:main'
+            'battery_status = mini_pupper_driver.battery_status:main',
+            'display_updater = mini_pupper_driver.display_updater:main'
 
         ],
     },

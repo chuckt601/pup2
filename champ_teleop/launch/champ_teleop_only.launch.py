@@ -8,6 +8,7 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.conditions import IfCondition
 from launch.substitutions import Command, LaunchConfiguration
+from rcl_interfaces.msg import SetParametersResult
 
 
 def generate_launch_description():

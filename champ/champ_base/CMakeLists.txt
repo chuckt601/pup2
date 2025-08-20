@@ -19,6 +19,7 @@ find_package(champ REQUIRED)
 find_package(message_filters REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(behaviortree_cpp_v3 REQUIRED)
 
 # Specify dependencies in a variable for reuse
 set(dependencies
@@ -35,25 +36,31 @@ set(dependencies
   message_filters
   champ
   rclcpp_action
-  rosidl_default_runtime
+  #rosidl_default_runtime 
+  behaviortree_cpp_v3  
 )
+
+
+
 
 # Include directories
 include_directories(
   include
+  ${ament_cmake_INCLUDE_DIRS}
   ${champ_INCLUDE_DIRS}
   ${champ_INCLUDE_DIRS}/champ/
-  ${champ_INCLUDE_DIRS}/champ/champ/
-  ${CMAKE_CURRENT_BINARY_DIR}/
+  #${champ_INCLUDE_DIRS}/champ/champ/
+  ${champ_INCLUDE_DIRS}/champ/champ_base/
   ${PROJECT_SOURCE_DIR}/include
-  ${CMAKE_CURRENT_BINARY_DIR}/rosidl_typesupport_cpp
+  ${CMAKE_CURRENT_BINARY_DIR}/
+  ${behaviortree_cpp_v3_INCLUDE_DIRS}
 )
 
 # Add the action interface
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "action/LegMoveActions.action"
-  DEPENDENCIES builtin_interfaces
-)
+#rosidl_generate_interfaces(${PROJECT_NAME}
+#  "action/LegMoveActions.action"
+#  DEPENDENCIES builtin_interfaces
+#)
 
 # Create libraries and nodes
 add_library(quadruped_controller SHARED src/quadruped_controller.cpp)
@@ -78,17 +85,32 @@ target_link_libraries(state_estimation_node state_estimation)
 ament_target_dependencies(state_estimation_node ${dependencies})
 
 # LegMove Node
-add_executable(leg_move_node src/leg_move_node.cpp)
-rosidl_get_typesupport_target(typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
-target_link_libraries(leg_move_node ${typesupport_target})
-ament_target_dependencies(leg_move_node
-  rclcpp
-  rclcpp_action
-  champ_msgs
-  rosidl_typesupport_cpp
-)
+#add_executable(leg_move_node src/leg_move_node.cpp)
+#rosidl_get_typesupport_target(typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
+#target_link_libraries(leg_move_node ${typesupport_target})
+#ament_target_dependencies(leg_move_node
+#  rclcpp
+#  rclcpp_action
+#  champ_msgs
+#  rosidl_typesupport_cpp
+#)
 
-
+ #LegMove action Node
+#add_executable(leg_move_action_node src/leg_move_action_node.cpp)
+#rosidl_get_typesupport_target(typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
+#target_link_libraries(leg_move_action_node 
+#  rclcpp_action
+#  ${typesupport_target}
+#  ${behaviortree_cpp_v3_LIBRARIES}
+#  )
+#ament_target_dependencies(leg_move_action_node
+#  rclcpp
+#  rclcpp_action
+#  action_msgs
+#  champ_msgs
+#  rosidl_typesupport_cpp
+#  behaviortree_cpp_v3
+#)
 # Install targets
 install(TARGETS 
     quadruped_controller
@@ -97,16 +119,18 @@ install(TARGETS
     message_relay_node
     state_estimation
     state_estimation_node
-    leg_move_node
-    ARCHIVE DESTINATION lib
-    LIBRARY DESTINATION lib
-    RUNTIME DESTINATION bin
+    #leg_move_node
+    #leg_move_action_node    
+    #LIBRARY DESTINATION lib
+    #RUNTIME DESTINATION bin
+    #ARCHIVE DESTINATION lib
     DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY config
-  DESTINATION share/${PROJECT_NAME}
-)
+#install(DIRECTORY config
+#  DESTINATION share/${PROJECT_NAME}
+#)
+
 
 
 

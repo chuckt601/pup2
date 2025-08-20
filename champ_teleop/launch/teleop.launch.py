@@ -42,7 +42,8 @@ def generate_launch_description():
         emulate_tty=True,
         parameters=[
             {'use_sim_time': use_sim_time},
-            {"joy": use_joy}
+            {"joy": use_joy},
+            {"imu_balance_enabled": false}
             ]
     )
     return LaunchDescription(
@@ -53,4 +54,4 @@ def generate_launch_description():
             joy,
             champ_teleop
         ]
-    )
+    ) 

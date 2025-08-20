@@ -97,9 +97,35 @@ def launch_bring_up(context, *args, **kwargs):
         name="leg_move_node",
         output="screen"
     )
-    return [rviz2_node,
-            bringup_launch,
-            leg_move_node]
+
+    joy_node = Node(
+        package="joy",
+        executable="joy_node",
+        arguments=["--dev", "/dev/input/js1"],
+    )
+
+    bno085_node = Node(
+        package="bno085",
+        executable="bno085_publisher"
+    )
+    display_interface_node = Node(
+        package="mini_pupper_driver",
+        executable="display_interface"
+    )
+    display_updater_node = Node(
+        package="mini_pupper_driver",
+        executable="display_updater"
+    )
+    
+
+    return [rviz2_node
+            ,bringup_launch
+            #,leg_move_node
+            ,joy_node
+            ,bno085_node
+            ,display_interface_node
+            ,display_updater_node
+            ]
 
 
 def generate_launch_description():
@@ -169,7 +195,7 @@ def generate_launch_description():
         declare_hardware_connected,
         OpaqueFunction(function=launch_bring_up),
         servo_interface_launch,
-        ldlidar_launch,
-        bno055_launch,
+        #ldlidar_launch,
+        #bno055_launch,
         champ_teleop_launch
     ])

@@ -1,0 +1,4 @@
+[console_scripts]
+bno055 = bno055.bno055:main
+bno055_subpub = bno055.bno055_subpub:main
+
